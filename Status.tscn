@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/Teletactile.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/plain-progress.png" type="Texture" id=2]
+[ext_resource path="res://textures/plain-progress-holder.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[node name="Status" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hull" type="TextureProgress" parent="."]
+margin_left = 184.0
+margin_top = 40.0
+margin_right = 624.0
+margin_bottom = 80.0
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Energy" type="TextureProgress" parent="."]
+margin_left = 184.332
+margin_top = 96.0
+margin_right = 624.332
+margin_bottom = 136.0
+value = 25.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HullLabel" type="RichTextLabel" parent="."]
+margin_left = 113.986
+margin_top = 39.86
+margin_right = 180.986
+margin_bottom = 79.86
+rect_pivot_offset = Vector2( 18.9365, 20 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Hull"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnergyLabel" type="RichTextLabel" parent="."]
+margin_left = 93.2937
+margin_top = 96.2517
+margin_right = 183.294
+margin_bottom = 136.252
+rect_pivot_offset = Vector2( 18.9365, 20 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "ENERGY"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
