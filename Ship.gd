@@ -9,6 +9,7 @@ export var thrust = 100.0;
 export var thrust_cost = 1.0;
 export var drag = 1;
 export var max_s = 7000;
+export var stopping_rate = 100;
 export var hull = 10;
 export var energy = 10;
 export var max_hull = 10;
@@ -18,6 +19,7 @@ var is_turning = false;
 var can_shoot = true;
 var since_shot = 0.0;
 var is_shooting = false;
+var is_stopping = false;
 export var fire_dead_time = 0.1;
 
 var vel = Vector2(0,0);
@@ -53,7 +55,12 @@ func _process(delta):
 		print(p);
 		p.add_child(b);
 		print(b);
-		
+	
+	if is_stopping:
+		var brake_v = vel.rotated(PI).normalized();
+		vel = vel + brake_v * stopping_rate*delta;
+		if vel.normalized() == brake_v:
+			vel = Vector2(0,0);
 	
 	
 	self.position = self.position + self.vel*delta;
@@ -66,6 +73,7 @@ func _process(delta):
 	is_thrusting = false;
 	is_turning = false;
 	is_shooting = false;
+	is_stopping = false;
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

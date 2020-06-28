@@ -31,6 +31,8 @@ func _process(delta):
 		player.is_thrusting = true;
 	if Input.is_action_pressed("shoot"):
 		player.is_shooting = true;
+	if Input.is_action_pressed("dead_stop"):
+		player.is_stopping = true;
 	$Debug.text = "r: {r}\nfacing: ({vx},{vy})\nvel: ({velx},{vely})".format({
 		"r":player.rotation,
 		"vx":cos(player.rotation),
