@@ -33,13 +33,6 @@ func _process(delta):
 		player.is_shooting = true;
 	if Input.is_action_pressed("dead_stop"):
 		player.is_stopping = true;
-	$Debug.text = "r: {r}\nfacing: ({vx},{vy})\nvel: ({velx},{vely})".format({
-		"r":player.rotation,
-		"vx":cos(player.rotation),
-		"vy":sin(player.rotation),
-		"velx":player.vel.x,
-		"vely":player.vel.y
-	});
 	if player.position.x < 0:
 		player.position.x = player.position.x + width;
 	if player.position.x >= width:

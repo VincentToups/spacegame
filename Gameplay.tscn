@@ -7,11 +7,9 @@
 scale = Vector2( 4, 4 )
 script = ExtResource( 1 )
 
-[node name="Debug" type="RichTextLabel" parent="."]
-margin_right = 399.0
-margin_bottom = 305.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Player_status" parent="." instance=ExtResource( 2 )]
+margin_left = 0.300888
+margin_top = 0.0641747
+margin_right = 600.301
+margin_bottom = 150.064
+rect_scale = Vector2( 0.15, 0.15 )
