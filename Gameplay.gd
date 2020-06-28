@@ -1,6 +1,7 @@
 extends Node2D
 
-var Ship = load("Ship.tscn")
+var Ship = load("Ship.tscn");
+var Status = load("Status.tscn");
 var player = Ship.instance();
 export var width : int = 512
 export var height : int = 300
@@ -16,6 +17,7 @@ func _ready():
 #	height = get_viewport().get_rect().size.y;
 	player.position = Vector2(200,200);
 	add_child(player);
+	$Player_status.ship = player;
 	pass # Replace with function body.
 
 
