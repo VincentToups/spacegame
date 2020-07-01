@@ -17,6 +17,7 @@ export var max_energy = 100;
 export var energy_regen_rate = 10;
 export var shoot_cost = 10;
 export var thrust_energy_rate = 11;
+export var shield_energy_rate = 11;
 
 var is_thrusting = false;
 var is_turning = false;
@@ -24,17 +25,22 @@ var can_shoot = true;
 var since_shot = 0.0;
 var is_shooting = false;
 var is_stopping = false;
+var is_shielding = false;
+var shields_up = false;
 export var fire_dead_time = 0.1;
 
 var vel = Vector2(0,0);
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	$Shield.modulate = Color(1,1,1,0.5);
+	$Shield.visible = false;
 	pass # Replace with function body.
 
 func _process(delta):
 	var thrust_cost = thrust_energy_rate*delta;
+	var shield_cost = shield_energy_rate*delta;
+	
 	if is_thrusting and thrust_cost <= energy:
 		var r = self.rotation - PI/2;
 		var td = Vector2(cos(r),sin(r));
@@ -52,6 +58,14 @@ func _process(delta):
 	if vel.length() > max_s:
 		vel = vel.normalized()*max_s;
 		
+	if is_shielding and shield_cost <= energy:
+		$Shield.visible = true;
+		energy -= shield_cost;
+		shields_up = true;
+	else:
+		$Shield.visible = false;
+		shields_up = false;
+			
 	since_shot = since_shot + delta;
 	can_shoot = since_shot > fire_dead_time and energy >= shoot_cost;
 	if is_shooting and can_shoot:
@@ -85,6 +99,7 @@ func _process(delta):
 	is_turning = false;
 	is_shooting = false;
 	is_stopping = false;
+	is_shielding = false;
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
