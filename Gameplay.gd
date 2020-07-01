@@ -33,6 +33,8 @@ func _process(delta):
 		player.is_shooting = true;
 	if Input.is_action_pressed("dead_stop"):
 		player.is_stopping = true;
+	if Input.is_action_pressed("shield"):
+		player.is_shielding = true;
 	if player.position.x < 0:
 		player.position.x = player.position.x + width;
 	if player.position.x >= width:
