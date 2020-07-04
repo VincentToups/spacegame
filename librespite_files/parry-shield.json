@@ -1,0 +1,24 @@
+{ "frames": {
+   "parry-shield.ase": {
+    "frame": { "x": 0, "y": 0, "w": 22, "h": 22 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 22, "h": 22 },
+    "sourceSize": { "w": 22, "h": 22 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.0-dev",
+  "image": "/home/toups/work/godot_games/SpaceGame/textures/parry-shield.png",
+  "format": "RGBA8888",
+  "size": { "w": 22, "h": 22 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}

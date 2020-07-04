@@ -1,0 +1,89 @@
+{ "frames": {
+   "fancy-animated-shield 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 1.ase": {
+    "frame": { "x": 18, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 2.ase": {
+    "frame": { "x": 36, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 3.ase": {
+    "frame": { "x": 54, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 4.ase": {
+    "frame": { "x": 72, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 5.ase": {
+    "frame": { "x": 90, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 6.ase": {
+    "frame": { "x": 108, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 7.ase": {
+    "frame": { "x": 126, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   },
+   "fancy-animated-shield 8.ase": {
+    "frame": { "x": 144, "y": 0, "w": 18, "h": 18 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 18, "h": 18 },
+    "sourceSize": { "w": 18, "h": 18 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "https://github.com/LibreSprite/LibreSprite/",
+  "version": "1.0-dev",
+  "image": "/home/toups/work/godot_games/SpaceGame/textures/fancy-animated-shield.png",
+  "format": "RGBA8888",
+  "size": { "w": 162, "h": 18 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" },
+   { "name": "Layer 2", "opacity": 255, "blendMode": "normal" }
+  ]
+ }
+}
