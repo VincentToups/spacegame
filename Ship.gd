@@ -18,6 +18,11 @@ export var energy_regen_rate = 10;
 export var shoot_cost = 10;
 export var thrust_energy_rate = 11;
 export var shield_energy_rate = 11;
+export var shield_tt_up = 1.0;
+export var parry_duration = 0.25;
+
+var parry_active = false;
+var since_parry_start = 10000;
 
 var is_thrusting = false;
 var is_turning = false;
@@ -27,6 +32,7 @@ var is_shooting = false;
 var is_stopping = false;
 var is_shielding = false;
 var shields_up = false;
+var since_shield = 0;
 export var fire_dead_time = 0.1;
 
 var vel = Vector2(0,0);
@@ -35,6 +41,7 @@ var vel = Vector2(0,0);
 func _ready():
 	$Shield.modulate = Color(1,1,1,0.5);
 	$Shield.visible = false;
+	$Parry.visible = false;
 	pass # Replace with function body.
 
 func _process(delta):
@@ -61,10 +68,22 @@ func _process(delta):
 	if is_shielding and shield_cost <= energy:
 		$Shield.visible = true;
 		energy -= shield_cost;
+		if shields_up == false:
+			$Shield/AnimationPlayer.seek(0.0,true)
+			$Shield/AnimationPlayer.play("up");
 		shields_up = true;
+		since_shield += delta;
 	else:
 		$Shield.visible = false;
+		$Shield/AnimationPlayer.seek(0,true);
 		shields_up = false;
+		since_shield = 0;
+	
+	if parry_active and since_parry_start >= parry_duration:
+		parry_active = false;
+		$Parry.visible = false;
+		
+	since_parry_start += delta;
 			
 	since_shot = since_shot + delta;
 	can_shoot = since_shot > fire_dead_time and energy >= shoot_cost;
@@ -105,3 +124,10 @@ func _process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_shield_up_animation_finished(anim_name):
+	parry_active = true;
+	since_parry_start = 0;
+	$Parry.visible = true;
+	pass # Replace with function body.
