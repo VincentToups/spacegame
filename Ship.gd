@@ -41,6 +41,7 @@ func _ready():
 	$Shield.modulate = Color(1,1,1,0.5);
 	$Shield.visible = false;
 	$Parry.visible = false;
+	$Shield/AnimationPlayer.stop(true);
 	pass # Replace with function body.
 
 func _process(delta):
@@ -74,7 +75,7 @@ func _process(delta):
 		since_shield += delta;
 	else:
 		$Shield.visible = false;
-		$Shield/AnimationPlayer.seek(0,true);
+		$Shield/AnimationPlayer.stop(true);
 		shields_up = false;
 		since_shield = 0;
 	
