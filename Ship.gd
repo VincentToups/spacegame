@@ -114,6 +114,11 @@ func _process(delta):
 		"left": self.rotation = self.rotation + PI/32;
 		"right": self.rotation = self.rotation - PI/32;
 		
+	if self.rotation >= 2*PI:
+		self.rotation -= 2*PI;
+	if self.rotation < 0:
+		self.rotation += 2*PI;
+		
 	is_thrusting = false;
 	is_turning = false;
 	is_shooting = false;
