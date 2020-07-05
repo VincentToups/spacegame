@@ -6,7 +6,6 @@ var Bullet = load("Bullet.tscn");
 # var a = 2
 # var b = "text"
 export var thrust = 100.0;
-export var thrust_cost = 1.0;
 export var drag = 1;
 export var max_s = 300;
 export var stopping_rate = 100;
